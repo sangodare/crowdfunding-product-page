@@ -30,7 +30,7 @@
             </div>
         </header>
         <section class="product-section">
-            <section class="product-section-container product-section-heading">
+            <section class="product-section-container product-section-heading bg-white">
                 <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
                     <g fill="none" fill-rule="evenodd">
                         <circle fill="#000" cx="28" cy="28" r="28"/>
@@ -57,18 +57,18 @@
                     </div>
                 </div>
             </section>
-            <section class="product-section-container progress">
+            <section class="product-section-container progress bg-white">
                 <div class="progress-content flex">
                     <div class="progress-fig">
-                        <span class="big-fig"> $89,914</span>
+                        <span class="big-fig text-clr-blk amount-raised">$<span class="amount">70,000</span></span>
                         <span>of $100,000 backed</span>
                     </div>
                     <div class="backers progress-fig">
-                        <span class="big-fig">5,007</span>
+                        <span class="big-fig text-clr-blk num-of-backers" id="num-of-backers">4,000</span>
                         <span>total backers</span>
                     </div>
                     <div class="progress-fig">
-                        <span class="big-fig">56</span>
+                        <span class="big-fig text-clr-blk">100</span>
                         <span>days left</span>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                     <div class="progress-bar-filled"></div>
                 </div>
             </section>
-            <section class="product-section-container about">
+            <section class="product-section-container about bg-white">
                 <h2>About this project</h2>
                 <p>The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
                     to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve 
@@ -85,48 +85,48 @@
                 <p>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
                     to allow notepads, pens, and USB sticks to be stored under the stand.
                 </p>
-                <div class="stand">
+                <div class="stand border">
                     <div>
                         <h3>Bamboo Stand</h3>
-                        <span class="pledge">Pledge $25 or more</span>
+                        <span class="pledge text-clr-cyn">Pledge $25 or more</span>
                         <p> You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
                             you’ll be added to a special Backer member list.
                         </p>
                         <div class="flex">
                             <div class="row margin-space">
-                                <span class="big-fig">101</span>
+                                <span class="big-fig text-clr-blk">101</span>
                                 <span class="small-text">left</span>
                             </div>
-                            <button class="button reward-btn">Select Reward</button>
+                            <a href="#reward--2" class="button reward-btn" data-reward="2">Select Reward</a>
                         </div>
                     </div>
                 </div>
-                <div class="stand">
+                <div class="stand border">
                     <div>
                         <h3>Black Edition Stand</h3>
-                        <span class="pledge">Pledge $75 or more</span>
+                        <span class="pledge text-clr-cyn">Pledge $75 or more</span>
                         <p> You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
                             member list. Shipping is included.
                         </p>
                         <div class="flex">
                             <div class="row margin-space">
-                                <span class="big-fig">64</span>
+                                <span class="big-fig text-clr-blk">64</span>
                                 <span class="small-text">left</span>
                             </div>
-                            <button class="button reward-btn">Select Reward</button>
+                            <a href="#reward--3" class="button reward-btn" data-reward="3">Select Reward</a>
                         </div>
                     </div>
                 </div>
-                <div class="stand mahogany-ed">
+                <div class="stand mahogany-ed border">
                     <div>
                         <h3>Mahogany Special Stand</h3>
-                        <span class="pledge">Pledge $200 or more</span>
+                        <span class="pledge txt-clr-cyn">Pledge $200 or more</span>
                         <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
                             to our Backer member list. Shipping is included.
                         </p>
                         <div class="flex">
                             <div class="row margin-space">
-                                <span class="big-fig">0</span>
+                                <span class="big-fig text-clr-blk">0</span>
                                 <span class="small-text">left</span>
                             </div>
                             <button class="button out-of-stock-bg reward-btn">Out of Stock</button>
@@ -135,6 +135,127 @@
                 </div>
             </section>
         </section>
-        <div class="overlay hidden"></div>
+        <!-- Modals -->
+        <div class="modal thanks-modal padding bg-white hidden">
+            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                    <circle fill="#3CB3AB" cx="32" cy="32" r="32"/>
+                    <path stroke="#FFF" stroke-width="5" d="M20 31.86L28.093 40 44 24"/>
+                </g>
+            </svg>
+            <h2 class="margin-top">Thanks for your support!</h2>
+            <p class="margin-top">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
+                an email once our campaign is completed.
+            </p>
+            <button class="button margin-top got-it-btn">Got it</button>
+        </div>
+        <div class="modal selection-modal bg-white padding hidden">
+            <div class="dp-flex flex-space">
+                <h2>Back this project</h2>
+                <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" class="close-modal">
+                    <path d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z" fill="#000" fill-rule="evenodd" opacity=".4"/>
+                </svg>
+            </div>
+            <p class="margin-top"> Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+            <div class="margin-top modal-stand--1">
+                <div class="padding-2 border stand-content">
+                    <div class="dp-flex flex-gap">
+                        <input type="checkbox" class="input" data-input="1">
+                        <h3 class="pl-no-reward">Pledge with no reward</h3>
+                    </div>
+                    <p class="margin-top no-reward-text">Choose to support us without a reward if you simply believe in our project. As a backer, 
+                        you will be signed up to receive product updates via email.
+                    </p>
+                </div> 
+                <div class="pledging no-reward-pledging hidden">
+                    <button class="button continue-btn" data-tab="1">continue</button>
+                </div>               
+            </div>
+            <div class="margin-top modal-stand--2" id="reward--2">
+                <div class="padding-2 border dp-grid stand-content">
+                    <input type="checkbox" class="input input--2" data-input="2">
+                    <div class="stand-title">
+                        <h3>Bamboo Stand</h3>
+                        <span class="text-clr-cyn">Pledge $25 or more</span>
+                    </div>
+                    <p class="margin-top">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
+                        you’ll be added to a special Backer member list.
+                    </p>
+                    <div class="num-left dp-flex">
+                        <span class="text-clr-blk">101</span>
+                        <span>left</span>
+                    </div>
+                </div>
+                <div class="pledging hidden">
+                    <div class="pl-content">
+                        <span class="pl-content-heading">Enter your pledge</span>
+                        <div class="dp-flex pl-content-form">
+                            <div class="pledge-amount">
+                                <span class="pledge-currency">$</span>
+                                <input type="number" class="pledge-input pledge-input--2" min="25" max="74" minlength="2" maxlength="2" required>
+                            </div>
+                            <button class="button continue-btn" data-tab="2">continue</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="margin-top modal-stand--3" id="reward--3">
+                <div class="padding-2 border dp-grid stand-content">
+                    <input type="checkbox" class="input input--3" data-input="3">
+                    <div class="stand-title">
+                        <h3>Black Edition Stand</h3>
+                        <span class="text-clr-cyn">Pledge $75 or more</span>
+                    </div>
+                    <p class="margin-top">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
+                        member list. Shipping is included.
+                    </p>                
+                    <div class="num-left dp-flex">
+                        <span class="text-clr-blk">64</span>
+                        <span>left</span>
+                    </div>
+                </div>
+                <div class="pledging hidden">
+                    <div class="pl-content">
+                        <span class="pl-content-heading">Enter your pledge</span>
+                        <div class="dp-flex pl-content-form">
+                            <div class="pledge-amount">
+                                <span class="pledge-currency">$</span>
+                                <input type="number" class="pledge-input pledge-input--3" min="75" max="199" minlength="2" maxlength="3" required>
+                            </div>
+                            <button class="button continue-btn" data-tab="3">continue</button>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="margin-top mahogany-ed modal-stand--4">
+                <div class="padding-2 border dp-grid stand-content">
+                    <input type="checkbox" class="input input--4" data-input="4">
+                    <div class="stand-title">
+                        <h3>Mahogany Special Edition</h3>
+                        <span class="text-clr-cyn">Pledge $200 or more</span>
+                    </div>
+                    <p class="margin-top">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
+                        to our Backer member list. Shipping is included.
+                    </p>
+                    <div class="num-left dp-flex">
+                        <span class="text-clr-blk">0</span>
+                        <span>left</span>
+                    </div>
+                </div>
+                <div class="pledging hidden">
+                    <div class="pl-content">
+                        <span class="pl-content-heading">Enter your pledge</span>
+                        <div class="dp-flex pl-content-form">
+                            <div class="pledge-amount">
+                                <span class="pledge-currency">$</span>
+                                <input type="number" class="pledge-input" min="200" max="400" minlength="3" maxlength="3" required>
+                            </div>
+                            <button class="button">continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay overlay-hidden"></div>
     </body>
 </html>
