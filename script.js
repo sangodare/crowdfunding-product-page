@@ -21,7 +21,7 @@ const bookmarkSvg = document.querySelector('.bookmark-svg');
 const bookmarkButton = document.querySelector('.bookmark-btn');
 
 let bookmarked;
-const dataObj = {};
+const dataObj = JSON.parse(localStorage.getItem('data')) || {};
 
 
 //Functions
@@ -122,6 +122,10 @@ function resetPledge() {
         const checkboxParentEl = checkbox.closest(`.modal-stand--${checkbox.dataset.input}`);
         checkbox.checked = false;
         hideStand(checkboxParentEl);
+        
+        const input = checkboxParentEl.querySelector(`.pledge-input--${checkbox.dataset.input}`);
+        if(input == null) return;
+        input.value = '';
     });
 };
 
@@ -170,10 +174,11 @@ function updateBackers() {
     const numOfBackers = ++currentBackers;
     const formattedNum = new Intl.NumberFormat(navigator.language, {style: 'decimal'}).format(numOfBackers);
 
-    dataObj.formattedNumOfBackers = formattedNum,
     
-    localStorage.setItem('data', JSON.stringify(dataObj));
     backers.textContent = `${formattedNum}`;
+
+    dataObj.formattedNumOfBackers = formattedNum,
+    localStorage.setItem('data', JSON.stringify(dataObj));
 };
 
 function updateAmountRaised(input) {
@@ -182,15 +187,17 @@ function updateAmountRaised(input) {
     const updatedAmount =  +currentAmountRaised + inputAmount;
     const formattedAmount = new Intl.NumberFormat(navigator.language, {style: 'decimal'}).format(updatedAmount);
 
+    
+    amountRaised.textContent = `${formattedAmount}`;
     dataObj.formattedAmountRaised = formattedAmount;
     localStorage.setItem('data', JSON.stringify(dataObj));
-    amountRaised.textContent = `${formattedAmount}`;
 };
 
 function updateProgressBar() {
     const data = JSON.parse(localStorage.getItem('data'));
     const figureRaised = data?.formattedAmountRaised || amountRaised.textContent.replaceAll(',', '');
-    const percent = (+figureRaised / 100000) * 100;
+    const formattedFigureRaised = figureRaised.replaceAll(',', '');
+    const percent = (+formattedFigureRaised / 100000) * 100;
     progressBar.style.flexBasis = `${percent}%`;
 };
 
@@ -226,11 +233,14 @@ function updateProgress(e) {
             setTimeout(() => parentEl.querySelector('p').remove(), 3000);  
         };
 
-        updateBackers();
-        updateAmountRaised(input);
-        updateProgressBar();
-        closeSelectionModal();
-        displayThanksModal();
+        if(+input.value >= input.min && +input.value <= +input.max) {
+            updateBackers();
+            updateAmountRaised(input);
+            updateProgressBar();
+            closeSelectionModal();
+            displayThanksModal();
+        };
+       
     };
     
 };
