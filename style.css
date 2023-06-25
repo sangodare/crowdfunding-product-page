@@ -314,6 +314,7 @@ a {
 }
 
 .input {
+    -webkit-appearance: none;
     appearance: none;
     width: .5rem;
     aspect-ratio: 1;
